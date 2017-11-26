@@ -3,35 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Davi's Auto Parts</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h2>Davi's Auto Parts</h2>
-<p style="margin-bottom: 20px;">Order auto parts here</p>
-<form action="processorder.php" method="post">
-    <table border="0">
-        <tr bgcolor=#cccccc">
-            <td width="150">Item</td>
-            <td width="15">Quantity</td>
-        </tr>
-        <tr>
-            <td>Tires</td>
-            <td align="center"><input type="text" name="tireqty" size="3"
-                                      maxlength="3" /></td>
-        </tr>
-        <tr>
-            <td>Oil</td>
-            <td align="center"><input type="text" name="oilqty" size="3"
-                                      maxlength="3" /></td>
-        </tr>
-        <tr>
-            <td>Spark Plugs</td>
-            <td align="center"><input type="text" name="sparkqty" size="3"
-                                      maxlength="3" /></td>
-        </tr>
-        <tr style="height: 60px;vertical-align: middle;">
-            <td colspan="2" align="center"><input type="submit" value="Submit Order" /></td>
-        </tr>
-    </table>
-</form>
+<main>
+    <h1>Davi’s Auto Parts</h1>
+    <p style="margin-bottom: 20px;">Order auto parts here</p>
+    <form action="processorder.php" method="post">
+        <table border="0">
+            <tr bgcolor="000">
+                <td width="150">Item</td>
+                <td width="15">Quantity</td>
+            </tr>
+            <tr>
+                <td><strong>Tires</strong><br/>100$ per tire</td>
+                <td align="center"><input type="number" name="tireqty" size="3"
+                                          maxlength="3" value="0"/></td>
+            </tr>
+            <tr>
+                <td><strong>Oil</strong><br/>10$ per bottle</td>
+                <td align="center"><input type="number" name="oilqty" size="3"
+                                          maxlength="3" value="0"/></td>
+            </tr>
+            <tr>
+                <td><strong>Spark Plugs</strong><br/>4$ per plug</td>
+                <td align="center"><input type="number" name="sparkqty" size="3"
+                                          maxlength="3" value="0"/></td>
+            </tr>
+            <tr>
+                <td>How did you find Bob’s?</td>
+                <td><select name="find">
+                    <option value="" selected disabled hidden>Choose here</option>
+                    <option value = "a">I’m a regular customer</option>
+                    <option value = "b">TV advertising</option>
+                    <option value = "c">Phone directory</option>
+                    <option value = "d">Word of mouth</option>
+                </select>
+                </td>
+            </tr>
+            <tr style="height: 60px;vertical-align: middle;">
+                <td colspan="2" align="center"><input type="submit" value="Submit Order" /></td>
+            </tr>
+        </table>
+    </form>
+    <div class="discount">
+        <h3>Tires discount:</h3>
+        <ul>
+            <li>Fewer than 10 tires purchased—No discount</li>
+            <li>10–49 tires purchased—5% discount</li>
+            <li>50–99 tires purchased—10% discount</li>
+            <li>100 or more tires purchased—15% discount</li>
+        </ul>
+    </div>
+</main>
 </body>
 </html>

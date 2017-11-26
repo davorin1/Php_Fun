@@ -1,0 +1,102 @@
+body {
+    background:url(img/bg.jpg);
+    background-size:cover;
+    background-repeat:no-repeat;
+    margin:0;
+}
+main {
+    background-color: rgba(34, 34, 34, 0.95);
+    color:#fff;
+    width: 100%;
+    max-width:600px;
+    margin:40px auto;
+    height: auto;
+    text-align: center;
+    padding:40px;
+    position: relative;
+}
+table {
+    width: 100%;
+}
+td {
+    padding: 20px;
+}
+input {
+    text-align: center;
+}
+input[type=submit] {
+    width: 100%;
+    padding:10px;
+    background-color: #000;
+    color:#fff;
+    text-transform: uppercase;
+    border:0;
+    cursor:pointer;
+    transition:0.1s background-color ease-in;
+
+}
+input[type=submit]:hover {
+    background-color:#021b50;
+}
+input[type=number] {
+    background:#111;
+    color:#fff;
+    border:0;
+    padding:10px 10px 10px 25px;
+    width: 100px;
+}
+h3 {
+    text-align: left;
+}
+ul {
+    text-align:left;
+}
+select {
+    background: #111;
+    color: #fff;
+    border: 0;
+    padding: 10px;
+    outline: none !important;
+}
+a.back {
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+    background: #000;
+    color: #fff !important;
+    padding: 10px 14px;
+    text-decoration: none;
+    transform: translateX(-50%);
+}
+a.back:hover {
+    background-color:#021b50;
+}
+.discount {
+    background: #111;
+    border: 1px dashed #000;
+    padding: 10px 20px;
+}
+main span {
+    color: #5a5a5a;
+    font-size: 12px;
+    display: block;
+}
+main span.show-shipping {
+    color:#ffb504;
+    cursor:pointer;
+    margin:15px;
+}
+.shipping {
+    background-color: #111;
+    padding: 20px;
+    margin: 15px 50px;
+    display: none;
+}
+.shipping table {
+    color:#fff;
+    text-align: center;
+}
+.shipping td {
+    padding: 5px;
+    border-bottom: 1px solid #212121;
+}
