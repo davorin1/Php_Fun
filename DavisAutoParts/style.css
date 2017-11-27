@@ -23,6 +23,7 @@ td {
 }
 input {
     text-align: center;
+    outline:none !important;
 }
 input[type=submit] {
     width: 100%;
@@ -44,6 +45,14 @@ input[type=number] {
     border:0;
     padding:10px 10px 10px 25px;
     width: 100px;
+}
+input[type=text] {
+    width:200px;
+    background: #111;
+    padding:10px;
+    color:#fff;
+    border:0;
+    text-align:left;
 }
 h3 {
     text-align: left;
@@ -99,4 +108,16 @@ main span.show-shipping {
 .shipping td {
     padding: 5px;
     border-bottom: 1px solid #212121;
+}
+.customer-orders {
+    text-align: left;
+    line-height: 30px;
+}
+
+
+/* MOBILE */
+@media (max-width:480px) {
+    main {
+        padding:40px 0;
+    }
 }

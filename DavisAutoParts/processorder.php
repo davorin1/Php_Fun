@@ -1,9 +1,16 @@
 <?php
+
+    // Declare variables and constants
+    $DOCUMENT_ROOT = $_SERVER['DOCUMENT_ROOT'];
+
+    $date = date('H:i, jS F Y');
+
     // create short variable names
     $tireqty = $_POST['tireqty'];
     $oilqty = $_POST['oilqty'];
     $sparkqty = $_POST['sparkqty'];
     $find = $_POST['find'];
+    $address = $_POST['address'];
 
     $totalqty = 0;
     $totalqty = $tireqty + $oilqty + $sparkqty;
@@ -15,6 +22,7 @@
 
     $discount = 0;
 
+    // Tires discount
     if ($tireqty < 10) {
         $discount = 0;
     } elseif (($tireqty >= 10) && ($tireqty <= 49)) {
@@ -25,6 +33,7 @@
         $discount = 15;
     }
 
+    // Summarize total
     $tirestotal = $tireqty*TIREPRICE;
     $tirestotal = $tirestotal - ($tirestotal*($discount/100));
 
@@ -32,6 +41,9 @@
                  + $oilqty*OILPRICE
                  + $sparkqty*SPARKPRICE;
                 $taxrate = 0.10;
+
+
+
 
 
 
@@ -49,7 +61,7 @@
     <h2>Order Results</h2>
     <?php
     echo '<p>Order processed at ';
-    echo date('H:i, jS F Y');
+    echo $date;
     echo '</p>';
     echo '<p>Your order is as follows: </p>';
     if ($totalqty == 0) {
@@ -97,6 +109,19 @@
             echo "<span>We don't know how this customer found us.</span>";
             break;
     }
+
+    // open file and write
+    @ $fp = fopen('$DOCUMENT_ROOT/../orders.txt','ab');
+    flock($fp, LOCK_EX);
+    if(!$fp) {
+        echo "<p><strong>Order could not be processed at this time.</strong></p>";
+        exit;
+    }
+    $outputstring = $date."\t".$tireqty." tires \t".$oilqty." oil\t".$sparkqty." spark plugs\t".$totalamount."$ \t".$address."\n";
+    fwrite($fp, $outputstring);
+    flock($fp, LOCK_UN);
+    fclose($fp);
+    echo "<p>Order written</p>";
 
     ?>
 </main>
